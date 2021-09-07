@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import Display from '../components/Display';
 
-class RandomColor extends Component {
+export default class RandomColor extends Component {
+    state = {
+      color: 'red'
+    }
 
+
+
+    render() {
+      return (
+        <Display color={this.state.color} />
+      );
+    }
 }
-
-export default RandomColor;
