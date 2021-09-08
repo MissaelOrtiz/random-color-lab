@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import Display from '../components/Display';
 
+const colors = ['red', 
+  'blue', 
+  'yellow', 
+  'gray', 
+  'black', 
+  'magenta', 
+  'maroon', 
+  'mint', 
+  'aqua', 
+  'gold', 
+  'beige'];
+
 export default class RandomColor extends Component {
     state = {
-      color: 'beige'
+      color: 'beige',
+      image: ''
     }
 
     doRandomColorChange = () => {
-      const colors = ['red', 
-        'blue', 
-        'yellow', 
-        'gray', 
-        'black', 
-        'magenta', 
-        'maroon', 
-        'mint', 
-        'aqua', 
-        'gold', 
-        'beige'];
       const randomColorIndex = Math.floor(Math.random() * colors.length);
-      this.setState({ color: colors[randomColorIndex] });
+      if(colors[randomColorIndex] === this.state.color) {
+        // SOMETHING GOES HERE
+      } else { this.setState({ color: colors[randomColorIndex] }); }
     }
 
     componentDidMount() {
